@@ -1,0 +1,31 @@
+<view class="wrap">
+  <view class="map">
+    <map 
+      id="map" 
+      longitude="{{longitude}}" 
+      latitude="{{latitude}}" 
+      scale="14"
+      markers="{{markers}}"
+      show-location
+    ></map>
+    <cover-image
+      class="center"
+      src="/resources/center.png"
+      bindtap="handleCenterTap"
+    ></cover-image>
+    <cover-image
+      class="pin"
+      src="/resources/pin.png"
+    ></cover-image>
+  </view>
+  <view class="nav">
+    <navigator class="publish" open-type="navigateTo" url="/pages/publish/publish">
+      <view>
+        发布
+      </view>
+    </navigator>
+    <view class="search">
+      搜索
+    </view>
+  </view>
+</view>
