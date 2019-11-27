@@ -1,10 +1,10 @@
-<view class="wrap">
+<view class="wrap" wx:if="{{!isSubmit}}">
   <view class="item">
     <view class="label">
       我的地址
     </view>
-    <view class="content">
-      点击选择，要勾选哦~
+    <view class="content" bindtap="handleChooseLocationTap">
+      {{address}}
     </view>
   </view>
 
@@ -29,7 +29,7 @@
       说明
     </view>
     <view class="content">
-      <input class="weui-input" placeholder="请写您的具体需求" />
+      <input class="weui-input" bindinput="handleMessageInput" placeholder="请写您的具体需求" />
     </view>
   </view>
 
@@ -38,9 +38,14 @@
       联系方式
     </view>
     <view class="content">
-      <input class="weui-input" placeholder="填写您的联系方式" />
+      <input class="weui-input" bindinput="handleContactInput" placeholder="填写您的联系方式" />
     </view>
   </view>
 
-  <button class="btn" type="default">发布信息</button>
+  <button class="btn" type="default" bindtap="handleSubmit">发布信息</button>
+</view>
+
+<view class="feedback" wx:if="{{isSubmit}}">
+  <import src="../../templates/feedback.wxml" />
+  <template is="feedback" data="{{isSucc}}"></template>
 </view>

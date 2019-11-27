@@ -1,66 +1,91 @@
-// pages/publish/publish.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    address: '点击选择，要勾选哦~',
+    isSubmit: false,
+    isSucc: false
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onReady() {
+    this.staticData = {
+      type: 'buy'
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handleChooseLocationTap() {
+    wx.chooseLocation({
+      success: (result) => {
+        let { address, longitude, latitude } = result
+        this.setData({
+          address
+        })
+        this.staticData.longitude = longitude
+        this.staticData.latitude = latitude
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  radioChange(e) {
+    this.staticData.type = e.detail.value
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  handleMessageInput(e) {
+    this.staticData.message = e.detail.value
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  handleContactInput(e) {
+    this.staticData.contact = e.detail.value
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
+  showToast(title) {
+    wx.showToast({
+      title,
+      icon: 'none',
+      duration: 2000
+    })
+  },
+ 
+  handleSubmit() {
+    let data = {
+      address: this.data.address,
+      ...this.staticData
+    }
 
+    if (this.data.address === '点击选择，要勾选哦~') {
+      this.showToast('请选择地址')
+      return
+    }
+    if (!this.staticData.message) {
+      this.showToast('请填写说明')
+      return
+    }
+    if (!this.staticData.contact) {
+      this.showToast('请填写联系方式')
+      return
+    }
+
+    wx.request({
+      url: 'https://ik9hkddr.qcloud.la/index.php/trade/add_item', //仅为示例，并非真实的接口地址
+      data,
+      method: 'get',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: (res) => {
+        this.setData({
+          isSubmit: true,
+          isSucc: res.data.ret
+        })
+      }
+    })
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handleBack() {
+    if (this.data.isSucc) {
+      wx.navigateBack({})
+    } else {
+      this.setData({
+        isSubmit: false
+      })
+    }
   }
 })
