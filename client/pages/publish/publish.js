@@ -66,7 +66,7 @@ Page({
     wx.request({
       url: 'https://ik9hkddr.qcloud.la/index.php/trade/add_item', //仅为示例，并非真实的接口地址
       data,
-      method: 'get',
+      method: 'post',
       header: {
         'content-type': 'application/x-www-form-urlencoded'
       },
@@ -81,7 +81,9 @@ Page({
 
   handleBack() {
     if (this.data.isSucc) {
-      wx.navigateBack({})
+      wx.reLaunch({
+        url: '/pages/index/index',
+      })
     } else {
       this.setData({
         isSubmit: false

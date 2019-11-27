@@ -4,9 +4,10 @@
       id="map" 
       longitude="{{longitude}}" 
       latitude="{{latitude}}" 
-      scale="14"
+      scale="16"
       markers="{{markers}}"
       show-location
+      bindmarkertap="handleMarkerTap"
     ></map>
     <cover-image
       class="center"
@@ -24,7 +25,7 @@
         发布
       </view>
     </navigator>
-    <view class="search">
+    <view class="search" bindtap="handleSearchTap">
       搜索
     </view>
   </view>
