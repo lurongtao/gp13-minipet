@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/search/search",
     "pages/publish/publish",
+    "pages/index/index",
+    "pages/test/test",
+    "pages/search/search",
     "pages/detail/detail"
   ],
   "window": {
@@ -11,5 +12,6 @@
     "navigationBarBackgroundColor": "#52b9d2",
     "navigationBarTitleText": "萌宠交易圈",
     "navigationBarTextStyle": "white"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

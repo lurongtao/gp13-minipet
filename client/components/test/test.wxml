@@ -1,0 +1,4 @@
+<view>
+  <abscomp title="abc"></abscomp>
+  <view>test</view>
+</view>

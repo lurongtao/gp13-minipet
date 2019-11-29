@@ -1,0 +1,7 @@
+<view>
+  <test generic:abscomp="comp1"></test>
+  <test generic:abscomp="comp2"></test>
+  <test generic:abscomp="comp1"></test>
+  <test generic:abscomp="comp1"></test>
+  <test generic:abscomp="comp1"></test>
+</view>

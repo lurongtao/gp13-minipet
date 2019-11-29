@@ -1,15 +1,17 @@
+const _ = require('underscore')
+
 Page({
   data: {
-    keyword: '',
+    keyword: 'abc',
     list: []
   },
 
-  handleInput(e) {
+  handleInput: _.debounce(function (e) {
     console.log(e)
     this.setData({
       keyword: e.detail.value
     })
-  },
+  }, 300),
 
   handleClick() {
     wx.request({
@@ -28,5 +30,9 @@ Page({
         })
       }
     })
+  },
+
+  onReady() {
+    // console.log(_)
   }
 })

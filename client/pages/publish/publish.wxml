@@ -45,7 +45,17 @@
   <button class="btn" type="default" bindtap="handleSubmit">发布信息</button>
 </view>
 
-<view class="feedback" wx:if="{{isSubmit}}">
+<!-- <view class="feedback" wx:if="{{isSubmit}}">
   <import src="../../templates/feedback.wxml" />
   <template is="feedback" data="{{isSucc}}"></template>
-</view>
+</view> -->
+
+<notice
+  wx:if="{{isSubmit && isSucc}}"
+  generic:abs-notice="success"
+></notice>
+
+<notice
+  wx:if="{{isSubmit && !isSucc}}"
+  generic:abs-notice="fail"
+></notice>

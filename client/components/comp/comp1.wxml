@@ -1,0 +1,2 @@
+<!--components/comp/comp1.wxml-->
+<text>{{title}}</text>

@@ -1,0 +1,7 @@
+<view>
+  <text>
+    {{title}}
+  </text>
+  <slot />
+  <view>{{keyword}}</view>
+</view>

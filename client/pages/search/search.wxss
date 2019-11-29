@@ -20,6 +20,10 @@
   padding: 0 20rpx;
 }
 
+.input input {
+  width: 100%;
+}
+
 .text {
   width: 90rpx;
   line-height: 88rpx;

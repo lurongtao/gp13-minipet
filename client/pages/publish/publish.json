@@ -1,4 +1,8 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "notice": "/components/notice/notice",
+    "success": "/components/ac/notice/succ",
+    "fail": "/components/ac/notice/fail"
+  },
   "navigationBarTitleText": "发布"
 }

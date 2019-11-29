@@ -1,5 +1,5 @@
 <view class="search-wrap">
-  <view class="search">
+  <!-- <view class="search">
     <view class="input">
       <input bindinput="handleInput"></input>
     </view>
@@ -10,5 +10,8 @@
       <text class="title1">{{item.address}}</text>
       <text class="title2">{{item.message}}</text>
     </view>
-  </scroll-view>
+  </scroll-view> -->
+  <search keyword="{{keyword}}">
+    <view>hello</view>
+  </search>
 </view>

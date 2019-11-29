@@ -1,0 +1,3 @@
+<view class="icon">
+  <icon type="cancel" size="40"/> 数据提交失败
+</view>
