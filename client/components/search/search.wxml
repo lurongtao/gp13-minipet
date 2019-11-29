@@ -1,7 +1,6 @@
-<view>
-  <text>
-    {{title}}
-  </text>
-  <slot />
-  <view>{{keyword}}</view>
-</view>
+  <view class="search">
+    <view class="input">
+      <input bindinput="handleInput"></input>
+    </view>
+    <view class="text" bindtap="handleClick">搜索</view>
+  </view>

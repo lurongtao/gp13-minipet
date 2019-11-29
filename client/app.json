@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/publish/publish",
     "pages/index/index",
-    "pages/test/test",
     "pages/search/search",
+    "pages/publish/publish",
+    "pages/test/test",
     "pages/detail/detail"
   ],
   "window": {

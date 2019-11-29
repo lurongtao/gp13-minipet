@@ -72,7 +72,6 @@ Component({
         return
       }
 
-      console.log(data)
 
       wx.request({
         url: 'https://ik9hkddr.qcloud.la/index.php/trade/add_item', //仅为示例，并非真实的接口地址
@@ -91,16 +90,10 @@ Component({
       })
     },
 
-    handleBack() {
-      if (this.data.isSucc) {
-        wx.reLaunch({
-          url: '/pages/index/index',
-        })
-      } else {
-        this.setData({
-          isSubmit: false
-        })
-      }
+    handleBacktap(e) {
+      this.setData({
+        isSubmit: e.detail
+      })
     }
   },
 

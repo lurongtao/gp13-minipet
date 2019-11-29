@@ -1,6 +1,6 @@
 <view class="feedback">
   <abs-notice></abs-notice>
   <view>
-    <button class="btn btn-fail" bindtap="handleBack">返回</button>
+    <button class="btn {{isSucc ? 'btn-succ' : 'btn-fail'}}" bindtap="handleBack">返回</button>
   </view>
 </view>

@@ -53,9 +53,13 @@
 <notice
   wx:if="{{isSubmit && isSucc}}"
   generic:abs-notice="success"
+  isSucc="{{isSucc}}"
+  bindbacktap="handleBacktap"
 ></notice>
 
 <notice
   wx:if="{{isSubmit && !isSucc}}"
   generic:abs-notice="fail"
+  isSucc="{{isSucc}}"
+  bindbacktap="handleBacktap"
 ></notice>

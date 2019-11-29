@@ -1,23 +1,18 @@
-// components/search/search.js
+const _ = require('underscore')
 Component({
-  /**
-   * 组件的属性列表
-   */
-  properties: {
-    keyword: String
-  },
-
-  /**
-   * 组件的初始数据
-   */
   data: {
-    title: 'search'
+    keyword: 'abc'
   },
 
-  /**
-   * 组件的方法列表
-   */
   methods: {
+    handleInput: _.debounce(function (e) {
+      this.setData({
+        keyword: e.detail.value
+      })
+    }, 300),
 
+    handleClick() {
+      this.triggerEvent('searchkeyword', this.data.keyword)
+    }
   }
 })
